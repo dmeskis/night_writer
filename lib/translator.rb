@@ -26,6 +26,9 @@ class Translator
     line_1 = collect_first_line_array
     line_2 = collect_second_line_array
     line_3 = collect_third_line_array
+    line_1_excess_array = []
+    line_2_excess_array = []
+    line_3_excess_array = []
     f = File.open(output, "w")
     line_1[0].each {|line| f.print(line)}
     f.print("\n")
