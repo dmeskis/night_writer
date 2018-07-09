@@ -10,22 +10,14 @@ end
 # Creating our class objects
 dictionary = BrailleDictionary.new()
 translator = Translator.new(ARGV[0], ARGV[1])
-
-puts translator.argv_1
-
 # Opening our message file into a variable
-message_file = File.open(ARGV[0]) {|f| f.read() }
+message_file = translator.open_input_file_and_read_file
 
-message_translated = []
-message_file.chars.each do |char|
-  message_translated << dictionary.braille_dictionary[char]
-  # require 'pry' ; binding.pry
-end
-
-# message_translated_as_string = message_translated.join
-
-braille_file = File.open(ARGV[1], "w") {|f| f.write(message_translated.join) }
-
+message_translated = translator.translate_file
+p translator.collect_first_line_array
+p translator.collect_second_line_array
+p translator.collect_third_line_array
+braille_file = translator.write_to_output
 
 
 # Assign a variable the number of characters in arg_2 and
