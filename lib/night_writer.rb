@@ -13,6 +13,9 @@ translator = Translator.new(ARGV[0], ARGV[1])
 
 translator.open_input_file_and_read_file
 translator.translate_file
+
+# binding.pry
+# translator.split_lines_over_80_char(translator.collect_first_line_array)
 translator.write_to_output
 
 
