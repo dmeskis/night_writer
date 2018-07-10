@@ -38,6 +38,8 @@ class Translator
 # Perhaps use recursion on this method or a loop where it keeps printing 40
 # chars at a time until the excess_array is empty. Think about how to do This
 # for each of your three seperate arrays in an alternating fashion.
+# Maybe store each collection in slices in an array  of arrays and print them
+# out in succession.
   def split_lines_over_80_char(line)
     excess_array = []
     if line.count > 40
@@ -46,17 +48,12 @@ class Translator
     end
   end
 
-  # Create three methods that collect three different arrays based on which line
-  # they belong on.
-
-  # Condensed my three seperate array collections into one method, simply enter
-  # 0-2 as line number to return lines 1-3
+  # Condensed the three seperate array collections into one method, simply enter
+  # 0-2 as line number to return an array of the braille characters for that line
   def collect_line_array(line_number)
-    line_array = []
-    line_array << @translated_message.map do |element|
+    @translated_message.map do |element|
       element[line_number]
     end
-    line_array[0]
   end
 
 end
