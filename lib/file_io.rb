@@ -21,7 +21,6 @@ class FileIo
   end
 
   def write_to_output(content)
-    t = Translator.new(self)
     File.open(output, "w") {|f| f.write(content)}
   end
 
