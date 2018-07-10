@@ -15,7 +15,6 @@ translator = Translator.new(file_io)
 
 
 content = translator.split_lines_over_80_char.join
-binding.pry
 file_io.write_to_output(content)
 # translator.write_to_output
 

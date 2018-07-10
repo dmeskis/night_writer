@@ -23,7 +23,7 @@ class Translator
 # Maybe store each collection in slices in an array  of arrays and print them
 # out in succession.
   def split_lines_over_80_char
-    line_1_array = collect_line_array(0)
+   line_1_array = collect_line_array(0)
    line_2_array = collect_line_array(1)
    line_3_array = collect_line_array(2)
    split_lines = []
@@ -37,7 +37,7 @@ class Translator
      end
      split_lines << "\n"
      40.times do |i|
-       line_3_array.shift
+       split_lines << line_3_array.shift
      end
      split_lines <<"\n"
    end
