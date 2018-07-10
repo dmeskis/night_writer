@@ -15,8 +15,6 @@ translator = Translator.new(file_io)
 
 
 file_io.write_to_output
-binding.pry
-
 # translator.write_to_output
 
 
