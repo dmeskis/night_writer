@@ -1,25 +1,17 @@
 require_relative 'braille_dictionary'
-
+require_relative 'file_io'
 class Translator
   attr_reader :input, :output, :translated_message, :dictionary
 
-  def initialize(input, output)
-    @input = input
-    @output = output
-    @translated_message = []
+  def initialize
     @dictionary = BrailleDictionary.new()
   end
 
-  def open_input_file_and_read_file
-    File.open(input) {|f| f.read() }
-  end
-
-  def translate_file
-    message = open_input_file_and_read_file.chomp
-    message.chars.each do |char|
-      @translated_message << @dictionary.braille_dictionary[char]
+  def translate_file(file_class)
+    message = file_class.read.chomp
+    message.chars.map do |char|
+      @dictionary.braille_dictionary[char]
     end
-    @translated_message
   end
 
   def write_to_output
