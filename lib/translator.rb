@@ -26,20 +26,22 @@ class Translator
     line_1_array = collect_line_array(0)
    line_2_array = collect_line_array(1)
    line_3_array = collect_line_array(2)
+   split_lines = []
    while line_1_array && line_2_array && line_3_array != []
      40.times do |i|
-       print line_1_array.shift
+       split_lines << line_1_array.shift
      end
-     print "\n"
+     split_lines << "\n"
      40.times do |i|
-       print line_2_array.shift
+       split_lines << line_2_array.shift
      end
-     print "\n"
+     split_lines << "\n"
      40.times do |i|
-       print line_3_array.shift
+       line_3_array.shift
      end
-     print "\n"
+     split_lines <<"\n"
    end
+   split_lines.compact
  end
 
 

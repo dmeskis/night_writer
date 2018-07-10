@@ -13,8 +13,10 @@ file_io = FileIo.new(ARGV[0], ARGV[1])
 dictionary = BrailleDictionary.new()
 translator = Translator.new(file_io)
 
+
+content = translator.split_lines_over_80_char.join
 binding.pry
-file_io.write_to_output
+file_io.write_to_output(content)
 # translator.write_to_output
 
 
