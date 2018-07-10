@@ -22,7 +22,7 @@ class Translator
 # for each of your three seperate arrays in an alternating fashion.
 # Maybe store each collection in slices in an array  of arrays and print them
 # out in succession.
-  def split_lines_over_80_char(line)
+  def split_lines_over_80_char
     line_1_array = collect_line_array(0)
    line_2_array = collect_line_array(1)
    line_3_array = collect_line_array(2)

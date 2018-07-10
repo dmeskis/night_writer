@@ -13,7 +13,7 @@ file_io = FileIo.new(ARGV[0], ARGV[1])
 dictionary = BrailleDictionary.new()
 translator = Translator.new(file_io)
 
-
+binding.pry
 file_io.write_to_output
 # translator.write_to_output
 
