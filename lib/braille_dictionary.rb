@@ -33,7 +33,7 @@ class BrailleDictionary
                             "-" => ["..","..","00"],
                             "." => ["..","00",".0"],
                             "?" => ["..","0.","00"],
-                            " " => [""] # Figure out what to do with spaces
+                            " " => ["","",""]
                           }
     end
 

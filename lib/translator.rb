@@ -1,5 +1,7 @@
 require_relative 'braille_dictionary'
 require_relative 'file_io'
+require "pry"
+
 class Translator
   attr_reader :input, :output, :translated_message, :dictionary
 
@@ -21,13 +23,26 @@ class Translator
 # Maybe store each collection in slices in an array  of arrays and print them
 # out in succession.
   def split_lines_over_80_char(line)
-    binding.pry
-    excess_array = []
-    if line.count > 40
-      excess_array << collect_line_array[40..-1]
-      binding.pry
-    end
-  end
+    line_1_array = collect_line_array(0)
+   line_2_array = collect_line_array(1)
+   line_3_array = collect_line_array(2)
+   while line_1_array && line_2_array && line_3_array != []
+     40.times do |i|
+       print line_1_array.shift
+     end
+     print "\n"
+     40.times do |i|
+       print line_2_array.shift
+     end
+     print "\n"
+     40.times do |i|
+       print line_3_array.shift
+     end
+     print "\n"
+   end
+ end
+
+
 
   # Condensed the three seperate array collections into one method, simply enter
   # 0-2 as line number to return an array of the braille characters for that line
