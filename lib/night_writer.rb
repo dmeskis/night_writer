@@ -11,17 +11,17 @@ end
 # Creating our class objects
 file_io = FileIo.new(ARGV[0], ARGV[1])
 dictionary = BrailleDictionary.new()
-translator = Translator.new()
+translator = Translator.new(file_io)
 
-x = translator.translate_file(file_io)
+
+file_io.write_to_output
 binding.pry
-translator.translate_file
-# translator.split_lines_over_80_char(translator.collect_line_array(1))
-translator.write_to_output
+
+# translator.write_to_output
 
 
 # Assign a variable the number of characters in arg_2 and
 # interpolate this value below
-argv_1_char_length = translator.open_input_file_and_read_file.size - 1
+argv_1_char_length = file_io.open.size - 1
 # argv_2_char_length = braille_file.size
 puts "Created #{ARGV[1]} containing #{argv_1_char_length} characters"
