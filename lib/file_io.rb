@@ -7,6 +7,7 @@ class FileIo
   def initialize(input,output)
     @input = input
     @output = output
+    @translator = Translator.new
   end
 
 
@@ -18,10 +19,10 @@ class FileIo
   def read
     f = open
     f.read()
-
   end
 
-
+  def write_to_output
+  end
 
 
 
