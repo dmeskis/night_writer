@@ -11,10 +11,11 @@ class Translator
   end
 
   def translate_file(file_class)
-    message = file_class.read.chomp
+    message = file_class.read.split.join(" ")
     message.chars.map do |char|
       @dictionary.braille_dictionary[char]
     end
+
   end
 
 # Perhaps use recursion on this method or a loop where it keeps printing 40
