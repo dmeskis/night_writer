@@ -11,7 +11,7 @@ class Translator
   end
 
   def translate_file(file_class)
-    message = file_class.read.split.join(" ")
+    message = file_class.read.split.join(" ").downcase
     message.chars.map do |char|
       @dictionary.braille_dictionary[char]
     end
