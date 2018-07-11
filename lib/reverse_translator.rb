@@ -17,15 +17,41 @@ class ReverseTranslator
   # arrays creates a key in the dictionary corresponding to a letter
   def get_braille_arrays
     string = braille_to_string
-    lines = string.scan(/.{80}/)
+    lines = string.scan(/.{1,80}/)
     pairs = lines.map do |string|
       string.scan(/../)
     end
   end
 
-
-  def collect_line_array(line_number)
-
+  # Scan the arrays you got into groups of 3 to prep for zip method
+  def group_braille_arrays
+    get_braille_arrays.each_slice(3).to_a
   end
+
+  def zip_grouped_braille_arrays
+    zipped_arrays = group_braille_arrays
+    zipped_arrays.map do |array|
+      array[0].zip(array[1], array[2])
+    end
+    zipped_arrays[0]
+  end
+
+  # compared our zipped braiLLe arrays to our ditionary
+  def get_final_array_before_translation
+    array = zip_grouped_braille_arrays
+    array[0].zip(array[1], array[2])
+  end
+
+  #maybe just shovel into array and then .join
+  # def translate
+  #   translated_string = ""
+  #   array = get_final_array_before_translation
+  #   # binding.pry
+  #   translated_string << array.each do |braille|
+  #     # binding.pry
+  #     @dictionary.braille_dictionary[braille]
+  #   end
+  # end
+
 
 end
