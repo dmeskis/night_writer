@@ -12,7 +12,7 @@ end
 file_io = FileIo.new(ARGV[0], ARGV[1])
 dictionary = ReverseBrailleDictionary.new()
 translator = ReverseTranslator.new(file_io)
-
+binding.pry
 content = translator.translate
 file_io.write_to_output(content)
 
