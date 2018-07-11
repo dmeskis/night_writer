@@ -13,8 +13,8 @@ file_io = FileIo.new(ARGV[0], ARGV[1])
 dictionary = ReverseBrailleDictionary.new()
 translator = ReverseTranslator.new(file_io)
 
-x = translator.get_braille_arrays
-binding.pry
+content = translator.translate
+file_io.write_to_output(content)
 
 file_length = file_io.open.size / 6
 puts "Created #{ARGV[1]} containing #{file_length} characters"
