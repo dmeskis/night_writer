@@ -3,7 +3,7 @@ require_relative 'file_io'
 require "pry"
 
 class Translator
-  attr_reader :input, :output, :translated_message, :dictionary
+  attr_reader :input, :output, :translated_message, :dictionary, :file_class
 
   def initialize(file_class)
     @dictionary = BrailleDictionary.new()
