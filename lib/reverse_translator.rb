@@ -33,10 +33,25 @@ class ReverseTranslator
     zipped_arrays.map do |array|
       array[0].zip(array[1], array[2])
     end
+    zipped_arrays[0]
   end
 
-  def collect_line_array(line_number)
-
+  # compared our zipped braiLLe arrays to our ditionary
+  def get_final_array_before_translation
+    array = zip_grouped_braille_arrays
+    array[0].zip(array[1], array[2])
   end
+
+  #maybe just shovel into array and then .join
+  # def translate
+  #   translated_string = ""
+  #   array = get_final_array_before_translation
+  #   # binding.pry
+  #   translated_string << array.each do |braille|
+  #     # binding.pry
+  #     @dictionary.braille_dictionary[braille]
+  #   end
+  # end
+
 
 end
