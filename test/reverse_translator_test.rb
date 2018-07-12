@@ -50,11 +50,29 @@ class ReverseTranslatorTest < Minitest::Test
     file_io = FileIo.new(@input_two,@output)
     translator = ReverseTranslator.new(file_io)
     actual = translator.zip_grouped_braille_arrays
-    expected
+    expected = [[["00", "..", ".."],
+ ["0.", "..", ".."],
+ [".0", "00", "0."],
+ ["..", "..", ".."],
+ ["00", ".0", ".."],
+ ["0.", ".0", "0."],
+ ["00", "00", ".."],
+ ["..", "..", ".."],
+ ["00", "00", ".."],
+ ["0.", ".0", "0."],
+ ["00", ".0", ".."]]]
 
-
+    assert_equal expected, actual
   end
 
+  def test_that_braille_is_being_translated_to_string
+    file_io = FileIo.new(@input_two,@output)
+    translator = ReverseTranslator.new(file_io)
+    actual = translator.translate
+    expected = "cat dog god"
+
+    assert_equal expected, actual
+  end
 
 
 

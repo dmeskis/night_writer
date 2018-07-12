@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 cat dog god
-=======
-cat dog god 
->>>>>>> 812892376a8f2de785767ab82c3de8bd47c42705
