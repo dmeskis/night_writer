@@ -9,10 +9,8 @@ class FileIo
     @output = output
   end
 
-
   def open
     File.open(input)
-
   end
 
   def read
@@ -23,11 +21,5 @@ class FileIo
   def write_to_output(content)
     File.open(output, "w") {|f| f.write(content)}
   end
-
-
-
-
-
-
 
 end

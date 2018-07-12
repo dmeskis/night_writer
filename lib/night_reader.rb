@@ -2,7 +2,6 @@ require 'pry'
 require_relative 'reverse_translator'
 require_relative 'reverse_braille_dictionary'
 require_relative 'file_io'
-# require_relative ''
 
 if ARGV.length != 2
   puts "We need exactly two parameters. Exiting program."
